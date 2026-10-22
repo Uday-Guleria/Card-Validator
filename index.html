@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A card number checksum validator using the Luhn algorithm." />
+  <title>Card Validator</title>
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <main class="container">
+    <section class="validator-card">
+      <div class="brand">
+        <div class="brand-icon">✓</div>
+        <span>CHECKSUM LAB</span>
+      </div>
+
+      <h1>Card Validator</h1>
+      <p class="subtitle">
+        Validate a card number using the Luhn algorithm.
+      </p>
+
+      <form id="validator-form" novalidate>
+        <label for="card-number">Card number</label>
+
+        <div class="input-wrapper">
+          <input
+            id="card-number"
+            name="card-number"
+            type="text"
+            inputmode="numeric"
+            autocomplete="off"
+            placeholder="7992 7398 713"
+            maxlength="23"
+            aria-describedby="input-help"
+          />
+          <span class="card-icon" aria-hidden="true">▤</span>
+        </div>
+
+        <p id="input-help" class="help-text">
+          Enter a test number. Spaces and hyphens are allowed.
+        </p>
+
+        <button type="submit" id="validate-button">
+          Validate card
+        </button>
+      </form>
+
+      <section id="result" class="result hidden"
+        aria-live="polite" aria-atomic="true">
+        <div class="result-heading">
+          <span id="result-icon" class="result-icon"></span>
+          <h2 id="result-title">Result</h2>
+        </div>
+
+        <p id="result-message"></p>
+
+        <dl class="result-details">
+          <div>
+            <dt>Card network</dt>
+            <dd id="network-value">Unknown</dd>
+          </div>
+          <div>
+            <dt>Format</dt>
+            <dd id="format-value">Not checked</dd>
+          </div>
+          <div>
+            <dt>Luhn checksum</dt>
+            <dd id="luhn-value">Not checked</dd>
+          </div>
+        </dl>
+      </section>
+
+      <p class="disclaimer">
+        Educational demo only. A passing checksum does not mean
+        a card is real, active, or authorized for payments.
+        Do not enter real payment card details.
+      </p>
+    </section>
+
+    <footer>
+      Built with HTML, CSS and JavaScript
+    </footer>
+  </main>
+</body>
+</html>

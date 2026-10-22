@@ -1,0 +1,269 @@
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #e8edf5;
+  background: #0b1020;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --surface: #131b2e;
+  --border: #29344b;
+  --muted: #98a5bb;
+  --accent: #7c9cff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.container {
+  width: min(100% - 32px, 520px);
+  margin: 0 auto;
+  padding: 64px 0 24px;
+}
+
+.validator-card {
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgb(0 0 0 / 20%);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.brand-icon {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  color: #0b1020;
+  background: var(--accent);
+  border-radius: 10px;
+  font-size: 19px;
+}
+
+h1 {
+  margin: 28px 0 8px;
+  font-size: clamp(28px, 6vw, 36px);
+  letter-spacing: -1.2px;
+}
+
+.subtitle {
+  margin: 0 0 28px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border: 1px solid #3b4965;
+  border-radius: 10px;
+  background: #0c1324;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgb(124 156 255 / 14%);
+}
+
+.input-wrapper input {
+  width: 100%;
+  min-width: 0;
+  padding: 15px 0;
+  color: #fff;
+  background: transparent;
+  border: 0;
+  outline: none;
+  letter-spacing: 1px;
+}
+
+.input-wrapper input::placeholder {
+  color: #65728a;
+}
+
+.card-icon {
+  color: var(--muted);
+  font-size: 22px;
+}
+
+.help-text {
+  margin: 9px 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+button {
+  width: 100%;
+  padding: 14px 18px;
+  color: #0b1020;
+  background: var(--accent);
+  border: 0;
+  border-radius: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: filter 150ms ease, transform 150ms ease;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+button:focus-visible {
+  outline: 3px solid #c0d0ff;
+  outline-offset: 3px;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #0c1324;
+}
+
+.result.success {
+  border-color: #247d5b;
+}
+
+.result.failure {
+  border-color: #a34a56;
+}
+
+.result-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.result-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: #29344b;
+  font-weight: 800;
+}
+
+.success .result-icon {
+  color: #83e5b4;
+  background: #163d31;
+}
+
+.failure .result-icon {
+  color: #ff9da6;
+  background: #49242c;
+}
+
+.result h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.result-message {
+  margin: 12px 0 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.result-details {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+.result-details div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.result-details dt {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.result-details dd {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.disclaimer {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+footer {
+  padding: 20px 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-top: 24px;
+  }
+
+  .validator-card {
+    padding: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
